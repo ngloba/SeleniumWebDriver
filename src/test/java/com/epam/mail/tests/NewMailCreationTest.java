@@ -22,10 +22,10 @@ public class NewMailCreationTest extends BaseTest {
         String newMailSubject = fillSubject( "New Test Mail 5");
 
         // WebElement bodyField = driver.findElement(By.cssSelector("div[class*='cke_editable cke_editable_inline cke_contents_true cke_show_borders']"));
-        WebElement bodyField = driver.findElement(By.cssSelector("div[class^='editable-container'] div div"));
-        //WebElement bodyField = driver.findElement(By.xpath("//div[@class='js-helper js-readmsg-msg']"));
-          bodyField.click();
- //          bodyField.sendKeys("Bla Bla Bla");
+        //WebElement bodyField = driver.findElement(By.cssSelector("div[class^='editable-container'] div div"));
+        WebElement bodyField = driver.findElement(By.xpath("//div[contains(@class, 'editable-') and contains(@class, 'cke_')]"));
+         bodyField.click();
+           bodyField.sendKeys("Bla Bla Bla");
         saveDraftMail();
 
 
