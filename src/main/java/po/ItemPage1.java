@@ -3,10 +3,10 @@ package po;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ItemPage extends AbstractPage {
+public class ItemPage1 extends AbstractPage1 {
     private static final By ITEM_PRICE_LOCATOR = By.cssSelector("#priceblock_ourprice");
 
-    public ItemPage(WebDriver driver) {
+    public ItemPage1(WebDriver driver) {
         super(driver);
     }
 
