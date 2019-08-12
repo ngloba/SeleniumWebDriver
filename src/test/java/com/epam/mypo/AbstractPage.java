@@ -13,6 +13,8 @@ public static final int WAIT_FOR_ELEMENTS_SECONDS = 10;
         this.driver = driver;
     }
 
+
+
     protected void waitForElementVisible (By locator) {
         new WebDriverWait(driver, WAIT_FOR_ELEMENTS_SECONDS).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
