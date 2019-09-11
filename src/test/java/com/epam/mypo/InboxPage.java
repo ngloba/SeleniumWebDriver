@@ -2,6 +2,8 @@ package com.epam.mypo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class InboxPage extends AbstractPage{
 
@@ -9,6 +11,7 @@ public class InboxPage extends AbstractPage{
     public static final By SENT_FOLDER_LOCATOR = By.xpath("//a[@href='/sent/']");
     public static final By NEW_MAIL_CREATION_LOCATOR = By.xpath("//span[@class='compose-button__txt']");
     public static final By DRAF_FOLDER_LOCATOR = By.xpath("//a[@href='/drafts/']");
+    public static final By FIRST_MAIL_LOCATOR = By.cssSelector("div[class*='js-tooltip-direction_letter-subject llc__item_title']");
 
     public InboxPage(WebDriver driver) {
         super(driver);
@@ -40,5 +43,12 @@ public class InboxPage extends AbstractPage{
         driver.findElement(SENT_FOLDER_LOCATOR).click();
         return new SentPage (driver);
 
+    }
+
+    public void RightClick () {
+        waitForElementVisible(FIRST_MAIL_LOCATOR);
+        Actions actions = new Actions(driver);
+        WebElement elementLocator = driver.findElement(FIRST_MAIL_LOCATOR);
+        actions.contextClick(elementLocator).perform();
     }
 }
