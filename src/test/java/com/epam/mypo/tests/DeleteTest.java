@@ -7,11 +7,12 @@ import org.testng.annotations.Test;
 public class DeleteTest extends BaseTest {
 
     @Test
-    public InboxPage deleteTest() {
+    public void deleteTest() {
         HomePage homePage = new HomePage(driver);
         homePage.open();
         homePage.fillLogin("nataliia.globa", "TestTest753");
         InboxPage inboxPage = homePage.pressLogin();
+        inboxPage.RightClick();
 
 
 

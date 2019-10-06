@@ -13,7 +13,7 @@ public class BaseTest {
     public WebDriver driver;
 
 
-    @BeforeClass(description = "Start browser")
+ //   @BeforeClass(description = "Start browser")
     public void initBrowser () {
         System.setProperty("webdriver.chrome.driver", "C:\\data\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
@@ -26,7 +26,7 @@ public class BaseTest {
 //base
 
 
-    @AfterClass(description = "close browser")
+//    @AfterClass(description = "close browser")
     public void kill(){
         driver.quit();
     }
